@@ -10,4 +10,3 @@ print os.path.realpath(os.path.dirname(__file__))
 print os.path.abspath(os.path.dirname(__file__)).split('\\')[:-1]
 
 
-print test
