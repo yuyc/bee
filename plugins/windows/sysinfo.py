@@ -4,7 +4,7 @@ __author__ = 'yuyc'
 
 
 import platform
-import win32com
+from win32com import client
 import wmi
 import os
 
@@ -30,7 +30,7 @@ def collect():
 class Win32Info(object):
     def __init__(self):
         self.wmi_obj = wmi.WMI()
-        self.wmi_service_obj = win32com.client.Dispatch("WbemScripting.SWbemLocator")
+        self.wmi_service_obj = client.Dispatch("WbemScripting.SWbemLocator")
         self.wmi_service_connector =self.wmi_service_obj.ConnectServer(".","root\cimv2")
 
     def get_cpu_info(self):
